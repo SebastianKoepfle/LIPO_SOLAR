@@ -17380,7 +17380,7 @@ Source: Motorola European Master Guide Pacge 3-59</description>
 <part name="CON1" library="flatflex" deviceset="FLATFLEX" device=""/>
 <part name="GND23" library="supply1" deviceset="GND" device=""/>
 <part name="GND24" library="supply1" deviceset="GND" device=""/>
-<part name="R27" library="rcl" deviceset="POTENTIOMETER_" device="PT-10"/>
+<part name="R27" library="rcl" deviceset="POTENTIOMETER_" device="PT-10" value="10k"/>
 <part name="GND25" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>

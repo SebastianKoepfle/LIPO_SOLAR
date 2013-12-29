@@ -17115,7 +17115,7 @@ Source: Motorola European Master Guide Pacge 3-59</description>
 <part name="GND20" library="supply1" deviceset="GND" device=""/>
 <part name="S1" library="fuse_Melf" deviceset="MELF6125" device=""/>
 <part name="D5" library="diode" deviceset="MBRA340T3" device="" value="Schutzdiode"/>
-<part name="Q1" library="transistor-fet" deviceset="FDD4141" device="TO252"/>
+<part name="Q1" library="transistor-fet" deviceset="FDD4141" device="TO252" value="MOSFET"/>
 <part name="Q2" library="transistor-fet" deviceset="?548*" device="SST" technology="4" value="BSS138"/>
 <part name="GND21" library="supply1" deviceset="GND" device=""/>
 <part name="R24" library="rcl" deviceset="R-EU_" device="R0805" value="100k"/>

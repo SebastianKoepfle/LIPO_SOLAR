@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.3">
+<eagle version="6.4">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="mm" style="dots" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="mm"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -17452,6 +17452,10 @@ NS Package M08A</description>
 <part name="GND25" library="supply1" deviceset="GND" device=""/>
 <part name="IC5" library="linear" deviceset="TSIC206" device=""/>
 <part name="GND26" library="supply1" deviceset="GND" device=""/>
+<part name="R28" library="rcl" deviceset="R-EU_" device="R0805" value="10k"/>
+<part name="C18" library="rcl" deviceset="C-EU" device="C0805" value="10nF"/>
+<part name="C19" library="rcl" deviceset="C-EU" device="C0805" value="100nF"/>
+<part name="GND27" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -17795,8 +17799,23 @@ NS Package M08A</description>
 <attribute name="VALUE" x="444.5" y="53.34" size="1.778" layer="96"/>
 </instance>
 <instance part="IC5" gate="G$1" x="342.9" y="0" rot="R180"/>
-<instance part="GND26" gate="1" x="345.44" y="-2.54" smashed="yes" rot="R90">
-<attribute name="VALUE" x="347.98" y="-5.08" size="1.778" layer="96" rot="R90"/>
+<instance part="GND26" gate="1" x="355.6" y="2.54" smashed="yes" rot="R90">
+<attribute name="VALUE" x="358.14" y="0" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R28" gate="G$1" x="355.6" y="-7.62" smashed="yes" rot="R180">
+<attribute name="NAME" x="356.3366" y="-10.16" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="353.314" y="-9.906" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="C18" gate="G$1" x="350.52" y="-2.54" smashed="yes">
+<attribute name="NAME" x="348.361" y="-7.874" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="348.361" y="-1.778" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="C19" gate="G$1" x="340.36" y="-15.24" smashed="yes">
+<attribute name="NAME" x="338.201" y="-20.574" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="338.201" y="-14.478" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="GND27" gate="1" x="340.36" y="-22.86" smashed="yes">
+<attribute name="VALUE" x="337.82" y="-25.4" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -18086,8 +18105,18 @@ NS Package M08A</description>
 </segment>
 <segment>
 <pinref part="GND26" gate="1" pin="GND"/>
+<pinref part="C18" gate="G$1" pin="1"/>
+<wire x1="353.06" y1="2.54" x2="350.52" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="350.52" y1="2.54" x2="350.52" y2="0" width="0.1524" layer="91"/>
+<wire x1="350.52" y1="2.54" x2="342.9" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="342.9" y1="2.54" x2="342.9" y2="-2.54" width="0.1524" layer="91"/>
+<junction x="350.52" y="2.54"/>
 <pinref part="IC5" gate="G$1" pin="GND"/>
 <wire x1="342.9" y1="-2.54" x2="340.36" y2="-2.54" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="C19" gate="G$1" pin="2"/>
+<pinref part="GND27" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -18739,11 +18768,11 @@ NS Package M08A</description>
 </net>
 <net name="N$50" class="0">
 <segment>
-<pinref part="IC5" gate="G$1" pin="SIGNAL"/>
-<wire x1="340.36" y1="-7.62" x2="378.46" y2="-7.62" width="0.1524" layer="91"/>
 <wire x1="378.46" y1="-7.62" x2="378.46" y2="22.86" width="0.1524" layer="91"/>
 <pinref part="µC" gate="_A" pin="RC1/T1OSI/CCP2*"/>
 <wire x1="378.46" y1="22.86" x2="381" y2="22.86" width="0.1524" layer="91"/>
+<pinref part="R28" gate="G$1" pin="1"/>
+<wire x1="360.68" y1="-7.62" x2="378.46" y2="-7.62" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$52" class="0">
@@ -18753,6 +18782,17 @@ NS Package M08A</description>
 <wire x1="370.84" y1="-12.7" x2="370.84" y2="25.4" width="0.1524" layer="91"/>
 <pinref part="µC" gate="_A" pin="RC0/T1OSO/T1CLK"/>
 <wire x1="370.84" y1="25.4" x2="381" y2="25.4" width="0.1524" layer="91"/>
+<pinref part="C19" gate="G$1" pin="1"/>
+<junction x="340.36" y="-12.7"/>
+</segment>
+</net>
+<net name="N$53" class="0">
+<segment>
+<pinref part="R28" gate="G$1" pin="2"/>
+<pinref part="IC5" gate="G$1" pin="SIGNAL"/>
+<wire x1="350.52" y1="-7.62" x2="340.36" y2="-7.62" width="0.1524" layer="91"/>
+<pinref part="C18" gate="G$1" pin="2"/>
+<junction x="350.52" y="-7.62"/>
 </segment>
 </net>
 </nets>
