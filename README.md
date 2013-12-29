@@ -2,6 +2,7 @@ LIPO_SOLAR
 ==========
 
 Project LIPO charger for foldable solar modules
+drawn in EAGLE 6.4.0
 
 µC: PIC18F4520
 
