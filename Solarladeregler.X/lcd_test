@@ -1,0 +1,20 @@
+include <p18f4520.h>
+#include <stdio.h>
+#include <usart.h>
+#include <timers.h>
+
+#pragma config OSC = INTIO67
+#pragma config WDT = OFF
+#pragma config LVP = OFF
+#pragma config MCLRE = ON 
+#pragma config PBADEN = OFF
+#pragma config BOREN = ON
+
+void main()
+{
+	OSCCON|=0x70;				// 8MHz-Takt
+	OSCTUNEbits.PLLEN=0;		// 4xPLL aktivieren=1
+
+	ADCON1=0x0f;  // alle Analogeingänge werden auf digitale I/O's geschalten
+
+}

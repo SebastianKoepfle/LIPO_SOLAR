@@ -1,0 +1,17 @@
+_LCD_Init: CODE, 1580 0 258
+_LCD_gotoxy: CODE, 2044 0 84
+__stringdata: SMALLCONST, 1536 0 43
+_Delay1KTCYx: CODE, 2500 0 14
+_main: CODE, 1838 0 206
+_Delay_ms: CODE, 2346 0 32
+__initialization: CODE, 2312 0 24
+_LCD_string: CODE, 2260 0 52
+_busy_lcd: CODE, 2448 0 22
+_LCD_string_xy: CODE, 2378 0 26
+_Init: CODE, 2470 0 16
+_Delay100TCYx: CODE, 2486 0 14
+_LCD_Cursor_ON: CODE, 2404 0 22
+_LCD_Cursor_OFF: CODE, 2426 0 22
+_DisplayRead: CODE, 2198 0 62
+_DisplayWrite: CODE, 2128 0 70
+Total: 967
